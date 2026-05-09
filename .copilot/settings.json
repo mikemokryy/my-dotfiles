@@ -1,0 +1,36 @@
+{
+  "model": "claude-opus-4.6",
+  "effortLevel": "medium",
+  "skillDirectories": [
+    "~/.claude/skills",
+    "~/.agents/skills"
+  ],
+  "disabledSkills": [],
+  "showReasoning": true,
+  "allowedUrls": [
+    "https://github.com"
+  ],
+  "lastLoggedInUser": {
+    "host": "https://github.com",
+    "login": "MikhailoMokryy"
+  },
+  "loggedInUsers": [
+    {
+      "host": "https://github.com",
+      "login": "MikhailoMokryy"
+    }
+  ],
+  "trustedFolders": [
+    "/Users/mikhailomokryi/Developer",
+    "/Users/mikhailomokryi/.copilot"
+  ],
+  "firstLaunchAt": "2026-03-11T00:00:00.000Z",
+  "allowedTools": [
+    "shell(npm run:*)",
+    "shell(grep)",
+    "shell(find)",
+    "shell(tree)",
+    "shell(ls)",
+    "shell(echo)"
+  ]
+}

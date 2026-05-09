@@ -1,0 +1,14 @@
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[user]
+	name = Mykhailo
+	email = 37027376+MikhailoMokryy@users.noreply.github.com
+[core]
+	excludesfile = $HOME/.gitignore_global
+	editor = nvim
+	ignorecase = false
+[init]
+	defaultBranch = main

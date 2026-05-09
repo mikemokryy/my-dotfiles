@@ -1,0 +1,101 @@
+# ============================================
+# Dotfiles whitelist gitignore
+# Deny everything, then allow specific files
+# ============================================
+
+# Deny all by default
+*
+
+# ---------- Git meta ----------
+!.gitignore
+!README.md
+
+# ---------- Shell configs ----------
+!.zshrc
+!.zshenv
+!.zprofile
+!.bash_profile
+!.profile
+!.tcshrc
+!.xonshrc
+
+# ---------- Git config ----------
+!.gitconfig
+
+# ---------- Dev tool configs ----------
+!.condarc
+!.nvmrc
+
+
+# ---------- AI tool configs (safe subset) ----------
+!.copilot/
+.copilot/*
+!.copilot/settings.json
+!.copilot/mcp-config.json
+
+!.agents/
+.agents/*
+!.agents/.skill-lock.json
+!.agents/skills/
+!.agents/skills/**
+
+# ---------- .config directory ----------
+!.config/
+.config/*
+
+!.config/public/
+!.config/public/**
+
+# Neovim (only hand-written config, skip auto-generated)
+!.config/nvim/
+.config/nvim/*
+!.config/nvim/init.lua
+!.config/nvim/stylua.toml
+!.config/nvim/.gitignore
+!.config/nvim/lua/
+.config/nvim/lua/*
+!.config/nvim/lua/config/
+!.config/nvim/lua/config/**
+!.config/nvim/lua/plugins/
+!.config/nvim/lua/plugins/**
+
+# Fish shell (only hand-written files)
+!.config/fish/
+.config/fish/*
+!.config/fish/config.fish
+!.config/fish/fish_plugins
+!.config/fish/functions/
+.config/fish/functions/*
+!.config/fish/functions/fish_greeting.fish
+!.config/fish/functions/fish_prompt.fish
+
+# Tmux
+!.config/tmux/
+!.config/tmux/**
+
+# Ghostty terminal
+!.config/ghostty/
+!.config/ghostty/**
+
+# Lazygit
+!.config/lazygit/
+!.config/lazygit/**
+
+# Scripts
+!.config/scripts/
+!.config/scripts/**
+
+# Claude settings
+!.config/.claude/
+!.config/.claude/**
+
+# ---------- Re-ignore sensitive/generated files ----------
+.config/fish/fish_variables*
+.config/fish/config-local.fish
+.config/.claude/*.local.json
+.config/tmux/plugins/
+.config/nvim/plugin/packer_compiled.lua
+**/.DS_Store
+**/*.sw[po]
+**/node_modules/
+**/.luarc.json

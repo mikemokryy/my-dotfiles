@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "next-devtools": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "next-devtools-mcp@latest"
+      ],
+      "env": {},
+      "tools": [
+        "*"
+      ]
+    },
+    "heroui-react": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@heroui/react-mcp@latest"
+      ],
+      "env": {},
+      "tools": [
+        "*"
+      ]
+    }
+  }
+}
