@@ -9,6 +9,7 @@
 # ---------- Git meta ----------
 !.gitignore
 !README.md
+!Brewfile
 
 # ---------- Shell configs ----------
 !.zshrc

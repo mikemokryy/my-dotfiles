@@ -1,0 +1,36 @@
+# Core CLI tools
+brew "fish"
+brew "tmux"
+brew "fzf"
+brew "fd"
+brew "ripgrep"
+brew "lazygit"
+brew "gh"
+brew "wget"
+brew "gnu-sed"
+brew "nvm"
+brew "tree-sitter"
+brew "luarocks"
+
+# Dev tools
+brew "cmake"
+brew "llvm"
+brew "lld"
+brew "openssl"
+brew "cocoapods"
+brew "carthage"
+brew "rbenv"
+brew "swiftlint"
+brew "xcodegen"
+brew "yarn"
+brew "postgresql"
+brew "redis", restart_service: :changed
+brew "mongodb-atlas-cli"
+brew "stripe-cli"
+brew "bombardier"
+
+# Apps
+cask "ghostty"
+cask "copilot-cli"
+cask "mongodb-compass"
+cask "openvpn-connect"
