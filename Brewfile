@@ -28,6 +28,7 @@ brew "redis", restart_service: :changed
 brew "mongodb-atlas-cli"
 brew "stripe-cli"
 brew "bombardier"
+brew "fastfetch"
 
 # Apps
 cask "ghostty"
