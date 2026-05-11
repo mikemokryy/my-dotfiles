@@ -44,6 +44,16 @@ return {
             mccabe = { enabled = false },
           },
         },
+        sourcekit = {
+          -- Additional configuration for sourcekit-lsp if needed
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = {
+                dynamicRegistration = true,
+              },
+            },
+          },
+        },
       },
     },
   },

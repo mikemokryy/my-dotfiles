@@ -6,7 +6,7 @@
     "~/.agents/skills"
   ],
   "disabledSkills": [],
-  "showReasoning": true,
+  "showReasoning": false,
   "allowedUrls": [
     "https://github.com"
   ],
