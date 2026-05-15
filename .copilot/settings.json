@@ -1,6 +1,6 @@
 {
   "model": "claude-opus-4.6",
-  "effortLevel": "medium",
+  "effortLevel": "high",
   "skillDirectories": [
     "~/.claude/skills",
     "~/.agents/skills"
@@ -21,7 +21,7 @@
     }
   ],
   "trustedFolders": [
-    "/Users/mikhailomokryi/Developer",
+    "/Users/mikhailomokryi/Developer/*",
     "/Users/mikhailomokryi/.copilot"
   ],
   "firstLaunchAt": "2026-03-11T00:00:00.000Z",
@@ -32,5 +32,10 @@
     "shell(tree)",
     "shell(ls)",
     "shell(echo)"
+  ],
+  "disabledMcpServers": [
+    "next-devtools",
+    "heroui-react",
+    "github-mcp-server"
   ]
 }
