@@ -1,6 +1,6 @@
 customCommands:
   - key: "C"
-    command: "git czg"
+    command: "czg ai"
     description: "commit with commitizen"
     context: "files"
     loadingText: "opening commitizen commit tool"
