@@ -33,9 +33,9 @@
     "shell(ls)",
     "shell(echo)"
   ],
-  "disabledMcpServers": [
-    "next-devtools",
-    "heroui-react",
-    "github-mcp-server"
+  "enabledMcpServers": [
+    "github-mcp-server",
+    "next-devtools-mcp",
+    "@heroui/react-mcp"
   ]
 }
