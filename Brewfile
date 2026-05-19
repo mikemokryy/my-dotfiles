@@ -29,9 +29,12 @@ brew "mongodb-atlas-cli"
 brew "stripe-cli"
 brew "bombardier"
 brew "fastfetch"
+brew "npm-check-updates"
+brew "font-fira-code"
 
 # Apps
 cask "ghostty"
 cask "copilot-cli"
 cask "mongodb-compass"
 cask "openvpn-connect"
+cask "miniforge"
