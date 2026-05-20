@@ -22,6 +22,7 @@
 
 # ---------- Git config ----------
 !.gitconfig
+!.gitignore_global
 
 # ---------- Dev tool configs ----------
 !.condarc

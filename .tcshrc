@@ -1,10 +1,2 @@
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if ( -f "/Users/mikhailomokryi/miniconda3/etc/profile.d/conda.csh" ) then
-    source "/Users/mikhailomokryi/miniconda3/etc/profile.d/conda.csh"
-else
-    setenv PATH "/Users/mikhailomokryi/miniconda3/bin:$PATH"
-endif
-# <<< conda initialize <<<
-
+source "$HOME/.cargo/env.tcsh"
