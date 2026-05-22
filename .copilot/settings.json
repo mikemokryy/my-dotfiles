@@ -10,28 +10,64 @@
   "allowedUrls": [
     "https://github.com"
   ],
-  "lastLoggedInUser": {
-    "host": "https://github.com",
-    "login": "MikhailoMokryy"
-  },
-  "loggedInUsers": [
-    {
-      "host": "https://github.com",
-      "login": "MikhailoMokryy"
-    }
-  ],
-  "trustedFolders": [
-    "/Users/mikhailomokryi/Developer/*",
-    "/Users/mikhailomokryi/.copilot"
-  ],
-  "firstLaunchAt": "2026-03-11T00:00:00.000Z",
   "allowedTools": [
-    "shell(npm run:*)",
+    "shell(cat)",
+    "shell(head)",
+    "shell(tail)",
+    "shell(less)",
+    "shell(wc)",
+    "shell(file)",
+    "shell(diff)",
+    "shell(bat)",
+    "shell(sort)",
+    "shell(uniq)",
+    "shell(awk)",
+    "shell(sed)",
+    "shell(cut)",
+    "shell(tr)",
     "shell(grep)",
+    "shell(rg)",
     "shell(find)",
+    "shell(fd)",
     "shell(tree)",
     "shell(ls)",
-    "shell(echo)"
+    "shell(stat)",
+    "shell(du)",
+    "shell(pwd)",
+    "shell(echo)",
+    "shell(printf)",
+    "shell(which)",
+    "shell(dirname)",
+    "shell(basename)",
+    "shell(realpath)",
+    "shell(env)",
+    "shell(uname)",
+    "shell(date)",
+    "shell(xargs)",
+    "shell(jq)",
+    "shell(node:*)",
+    "shell(python:*)",
+    "shell(npm run:*)"
+  ],
+  "deniedTools": [
+    "shell(git commit)",
+    "shell(git push)",
+    "shell(git rebase)",
+    "shell(git reset)",
+    "shell(git clean)",
+    "shell(git merge)",
+    "shell(git tag)",
+    "shell(ssh:*)",
+    "shell(scp:*)",
+    "shell(sudo:*)",
+    "shell(su)",
+    "shell(eval)",
+    "shell(exec)",
+    "shell(source)",
+    "shell(dd)",
+    "shell(mkfs:*)",
+    "shell(shutdown:*)",
+    "shell(reboot)"
   ],
   "enabledMcpServers": [
     "github-mcp-server",

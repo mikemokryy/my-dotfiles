@@ -29,3 +29,6 @@ __pycache__/
 *.o
 *.so
 *.dylib
+
+
+**/.claude/settings.local.json
