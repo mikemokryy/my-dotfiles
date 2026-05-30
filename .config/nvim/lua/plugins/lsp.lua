@@ -46,7 +46,7 @@ return {
         },
         sourcekit = {
           cmd = {
-            "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
+            "/usr/bin/sourcekit-lsp",
           },
           -- Additional configuration for sourcekit-lsp if needed
           capabilities = {

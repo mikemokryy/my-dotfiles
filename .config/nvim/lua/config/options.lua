@@ -13,12 +13,12 @@ vim.opt.formatoptions:append({ "r" })
 vim.g.lazyvim_python_lsp = "pylsp"
 vim.g.lazyvim_python_ruff = "ruff"
 vim.g.lazyvim_prettier_needs_config = true
+vim.g.lazyvim_eslint_auto_format = false
 vim.g.lazyvim_picker = "fzf"
 
 vim.g.lazyvim_cmp = "blink.cmp"
--- vim.g.lazyvim_blink_main = false
 
 vim.g.lazyvim_ts_lsp = "vtsls"
 
 vim.g.snacks_animate = false
-vim.g.ai_cmp = true
+vim.g.ai_cmp = false
