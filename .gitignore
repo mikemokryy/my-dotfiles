@@ -41,6 +41,14 @@
 !.agents/skills/
 !.agents/skills/**
 
+!.codex/
+.codex/*
+!.codex/config.toml
+!.codex/*.config.toml
+!.codex/rules/
+.codex/rules/*
+!.codex/rules/*.rules
+
 # ---------- .config directory ----------
 !.config/
 .config/*

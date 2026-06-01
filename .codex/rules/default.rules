@@ -1,0 +1,71 @@
+# Shell command policy migrated from ~/.copilot/settings.json.
+# These rules affect requests to run commands outside the sandbox.
+
+prefix_rule(
+    pattern = [
+        [
+            "cat", "head", "tail", "less", "wc", "file", "diff", "bat",
+            "sort", "uniq", "awk", "sed", "cut", "tr", "grep", "rg",
+            "find", "fd", "tree", "ls", "stat", "du", "pwd", "echo",
+            "printf", "which", "dirname", "basename", "realpath", "env",
+            "uname", "date", "xargs", "jq",
+        ],
+    ],
+    decision = "allow",
+    justification = "Read-only inspection and local text-processing commands are allowed without approval.",
+    match = [
+        "rg TODO",
+        "sed -n 1,120p package.json",
+        "ls -la",
+    ],
+    not_match = [
+        "git commit -m update",
+        "python script.py",
+    ],
+)
+
+prefix_rule(
+    pattern = [["node", "python", "python3"]],
+    decision = "prompt",
+    justification = "General-purpose runtimes can modify files or execute arbitrary logic; approve each use.",
+    match = [
+        "node --version",
+        "python3 --version",
+    ],
+)
+
+prefix_rule(
+    pattern = ["npm", "run"],
+    decision = "prompt",
+    justification = "npm scripts are project-defined and may run arbitrary commands; approve each use.",
+    match = [
+        "npm run test",
+        "npm run build",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", ["commit", "push", "rebase", "reset", "clean", "merge", "tag"]],
+    decision = "forbidden",
+    justification = "Git commands that change repository history, refs, working tree state, or remotes are not allowed from Codex.",
+    match = [
+        "git commit -m update",
+        "git push",
+        "git reset --hard HEAD",
+    ],
+    not_match = [
+        "git status",
+        "git diff",
+    ],
+)
+
+prefix_rule(
+    pattern = [["ssh", "scp", "sudo", "su", "eval", "exec", "source", "dd", "mkfs", "shutdown", "reboot"]],
+    decision = "forbidden",
+    justification = "Privileged access, remote shell/file transfer, shell evaluation, and destructive system commands are blocked.",
+    match = [
+        "ssh example.com",
+        "sudo make install",
+        "dd if=/dev/zero of=/tmp/file",
+    ],
+)
