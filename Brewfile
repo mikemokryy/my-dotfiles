@@ -30,6 +30,7 @@ brew "bombardier"
 brew "fastfetch"
 brew "npm-check-updates"
 brew "eza"
+brew "tree"
 
 # Apps
 cask "ghostty"

@@ -3,11 +3,6 @@ function _nvm_use_on_cd --on-variable PWD --description 'Do nvm stuff'
     nvm use --silent
 end
 
-# Activate node version from .nvmrc on shell startup
-if status is-interactive && ! set --query nvm_current_version
-    nvm use --silent
-end
-
 # Global variables
 set -gx TERM tmux-256color
 set -gx EDITOR nvim
@@ -84,7 +79,6 @@ alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
 alias g git
-alias c claude
 alias icat="kitty +kitten icat --align=left"
 
 command -qv nvim && alias nv nvim
@@ -95,19 +89,25 @@ if type -q eza
     alias lla "ll -a"
 end
 
+# Keep nvm's active Node ahead of Homebrew's Node. nvm_current_version can be
+# inherited by child shells, so erase it before re-running nvm use.
+if status is-interactive
+    set --erase nvm_current_version
+    nvm use --silent
+end
+
 # Added by `rbenv init` on Mon Apr 13 12:25:35 EEST 2026
 status --is-interactive; and rbenv init - --no-rehash fish | source
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
-    eval /opt/homebrew/Caskroom/miniforge/base/bin/conda "shell.fish" "hook" $argv | source
+    eval /opt/homebrew/Caskroom/miniforge/base/bin/conda "shell.fish" hook $argv | source
 else
     if test -f "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
         . "/opt/homebrew/Caskroom/miniforge/base/etc/fish/conf.d/conda.fish"
     else
-        set -x PATH "/opt/homebrew/Caskroom/miniforge/base/bin" $PATH
+        set -x PATH /opt/homebrew/Caskroom/miniforge/base/bin $PATH
     end
 end
 # <<< conda initialize <<<
-

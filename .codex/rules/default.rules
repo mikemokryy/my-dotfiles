@@ -25,22 +25,22 @@ prefix_rule(
 )
 
 prefix_rule(
-    pattern = [["node", "python", "python3"]],
+    pattern = ["npm", "run"],
+    decision = "allow",
+    justification = "npm scripts are project-defined and may run arbitrary commands; approve each use.",
+    match = [
+        "npm run test",
+        "npm run build",
+    ],
+)
+
+prefix_rule(
+    pattern = [["node", "python", "python3", "npx"]],
     decision = "prompt",
     justification = "General-purpose runtimes can modify files or execute arbitrary logic; approve each use.",
     match = [
         "node --version",
         "python3 --version",
-    ],
-)
-
-prefix_rule(
-    pattern = ["npm", "run"],
-    decision = "prompt",
-    justification = "npm scripts are project-defined and may run arbitrary commands; approve each use.",
-    match = [
-        "npm run test",
-        "npm run build",
     ],
 )
 
@@ -69,3 +69,4 @@ prefix_rule(
         "dd if=/dev/zero of=/tmp/file",
     ],
 )
+prefix_rule(pattern=["swift", "test"], decision="allow")

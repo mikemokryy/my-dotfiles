@@ -1,12 +1,46 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
 model = "gpt-5.5"
 model_reasoning_effort = "high"
+plan_mode_reasoning_effort = "xhigh"
+model_reasoning_summary = "none"
+model_supports_reasoning_summaries = false
 hide_agent_reasoning = true
+sandbox_mode = "read-only"
+approval_policy = "on-request"
 
-[projects."/Users/mikhailo/Developer"]
-trust_level = "trusted"
+allow_login_shell = false
+personality = "pragmatic"
+
+tui.vim_mode_default = true
 
 [projects."/Users/mikhailo/Developer/kokimoki-server"]
 trust_level = "trusted"
+
+[projects."/Users/mikhailo"]
+trust_level = "trusted"
+
+[projects."/Users/mikhailo/Developer/gfc-platform"]
+trust_level = "trusted"
+
+[projects."/Users/mikhailo/Developer/LoquizIOS"]
+trust_level = "trusted"
+
+[projects."/Users/mikhailo/Developer/kokimoki-sdk"]
+trust_level = "trusted"
+
+[projects."/Users/mikhailo/Developer/game-concepts/coffee-prophesy-1"]
+trust_level = "trusted"
+
+[projects."/Users/mikhailo/Developer/host-starter-template"]
+trust_level = "trusted"
+
+[projects."/Users/mikhailo/Developer/Research/DecisioNet"]
+trust_level = "trusted"
+
+[projects."/Users/mikhailo/Developer/game-concepts/meet-and-connect-new"]
+trust_level = "trusted"
+
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4
@@ -15,10 +49,12 @@ trust_level = "trusted"
 terminal_resize_reflow = true
 prevent_idle_sleep = true
 
-[mcp_servers.next-devtools]
-command = "npx"
-args = ["-y", "next-devtools-mcp@latest"]
+[notice]
+hide_rate_limit_model_nudge = true
 
-[mcp_servers.heroui-react]
-command = "npx"
-args = ["-y", "@heroui/react-mcp@latest"]
+[analytics]
+enabled = false
+
+[[skills.config]]
+path = "/Users/mikhailo/.codex/skills/.system/imagegen/SKILL.md"
+enabled = false

@@ -1,40 +1,23 @@
 {
   "version": 3,
-  "skills": {
-    "heroui-react": {
-      "source": "heroui-inc/heroui",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/heroui-inc/heroui.git",
-      "skillPath": "skills/heroui-react/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-03-26T08:43:31.760Z",
-      "updatedAt": "2026-03-26T08:43:31.760Z"
-    },
-    "stripe-best-practices": {
-      "source": "docs.stripe.com",
-      "sourceType": "well-known",
-      "sourceUrl": "https://docs.stripe.com/.well-known/skills/stripe-best-practices/SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-27T06:23:41.589Z",
-      "updatedAt": "2026-04-27T06:23:41.589Z"
-    }
-  },
+  "skills": {},
   "dismissed": {
     "findSkillsPrompt": true
   },
   "lastSelectedAgents": [
     "amp",
     "antigravity",
+    "antigravity-cli",
     "cline",
     "codex",
     "cursor",
     "deepagents",
-    "firebender",
     "gemini-cli",
     "github-copilot",
-    "kimi-cli",
+    "kimi-code-cli",
     "opencode",
     "warp",
+    "zed",
     "claude-code"
   ]
 }
