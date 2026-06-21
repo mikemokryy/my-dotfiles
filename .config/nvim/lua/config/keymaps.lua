@@ -46,6 +46,9 @@ keymap.set("n", "<C-j>", diagnostic_goto(true), { noremap = false, desc = "Next 
 -- Restart LSP
 keymap.set("n", "<leader>R", ":LspRestart<Return>", { noremap = false, desc = "Restart LSP" })
 
+-- Codediff
+keymap.set("n", "<leader>cD", ":CodeDiff<Return>", { desc = "Codediff viewer" })
+
 -- Disable arrows
 keymap.set("", "<up>", "", opts)
 keymap.set("", "<down>", "", opts)

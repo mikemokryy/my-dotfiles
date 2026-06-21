@@ -1,4 +1,4 @@
 interface:
   display_name: "Mike Guidelines"
-  short_description: "Pragmatic coding guidelines"
+  short_description: "Best coding practices"
   default_prompt: "Use $mike-guidelines when writing, reviewing, or refactoring code."

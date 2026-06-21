@@ -86,6 +86,12 @@ return {
     },
   },
 
+  -- Diff viewer
+  {
+    "esmuellert/codediff.nvim",
+    cmd = "CodeDiff",
+  },
+
   -- {
   --   "saghen/blink.cmp",
   --   opts = {
