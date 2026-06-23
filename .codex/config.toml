@@ -44,6 +44,12 @@ trust_level = "trusted"
 [projects."/Users/mikhailo/Developer/loquiz-server"]
 trust_level = "trusted"
 
+[projects."/Users/mikhailo/Developer/loquiz-creator"]
+trust_level = "trusted"
+
+[projects."/Users/mikhailo/Developer/game-concepts/mike-test"]
+trust_level = "trusted"
+
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4
