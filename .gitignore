@@ -50,6 +50,17 @@
 .codex/rules/*
 !.codex/rules/*.rules
 
+!.gemini/
+.gemini/*
+!.gemini/antigravity-cli/
+.gemini/antigravity-cli/*
+!.gemini/antigravity-cli/settings.json
+!.gemini/config/
+.gemini/config/*
+!.gemini/config/mcp_config.json
+!.gemini/config/AGENTS.md
+
+
 # ---------- .config directory ----------
 !.config/
 .config/*
