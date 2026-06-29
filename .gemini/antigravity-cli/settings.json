@@ -1,8 +1,9 @@
 {
+  "allowNonWorkspaceAccess": true,
   "colorScheme": "solarized dark",
   "enableTelemetry": false,
   "enableTerminalSandbox": true,
-  "model": "Claude Opus 4.6 (Thinking)",
+  "model": "Gemini 3.5 Flash (High)",
   "notifications": true,
   "permissions": {
     "allow": [
@@ -71,6 +72,13 @@
   },
   "showFeedbackSurvey": false,
   "showTips": false,
+  "statusLine": {
+    "type": "",
+    "command": "",
+    "enabled": true
+  },
+  "subagent_model": "gemini-3.5-flash-high",
+  "toolPermission": "strict",
   "trustedWorkspaces": [
     "/Users/mikhailo/Developer/kokimoki-server",
     "/Users/mikhailo/Developer/gfc-platform",
@@ -82,7 +90,8 @@
     "/Users/mikhailo/Developer/game-concepts/meet-and-connect-new",
     "/Users/mikhailo/Developer/loquiz-server",
     "/Users/mikhailo/Developer/loquiz-creator",
-    "/Users/mikhailo/Developer/game-concepts/mike-test"
+    "/Users/mikhailo/Developer/game-concepts/mike-test",
+    "/Users/mikhailo"
   ],
   "verbosity": "low"
 }

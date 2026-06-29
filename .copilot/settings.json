@@ -73,5 +73,6 @@
     "github-mcp-server",
     "next-devtools-mcp",
     "@heroui/react-mcp"
-  ]
+  ],
+  "colorMode": "default"
 }
