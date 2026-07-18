@@ -1,9 +1,9 @@
 ---
-name: mike-guidelines
+name: code-guidelines
 description: Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.
 ---
 
-# Mike Guidelines
+# Code Guidelines
 
 Bias toward caution over speed. For trivial tasks, use judgment.
 
@@ -26,6 +26,8 @@ Write the minimum code that solves the problem. Add nothing speculative.
 - Do not create abstractions for single-use code.
 - Do not add flexibility or configurability that was not requested.
 - Do not add error handling for impossible scenarios.
+- Keep code DRY where duplication would make future changes risky; tolerate small duplication when it keeps code clearer.
+- Use SOLID as a check on responsibility boundaries and dependencies, not as a reason to add layers.
 - If 200 lines could be 50, rewrite it.
 
 Ask: "Would a senior engineer say this is overcomplicated?" If yes, simplify.

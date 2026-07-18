@@ -1,8 +1,8 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
 model = "gpt-5.5"
-model_reasoning_effort = "medium"
-plan_mode_reasoning_effort = "high"
+model_reasoning_effort = "high"
+plan_mode_reasoning_effort = "xhigh"
 model_reasoning_summary = "none"
 model_supports_reasoning_summaries = false
 hide_agent_reasoning = true
@@ -13,6 +13,10 @@ allow_login_shell = false
 personality = "pragmatic"
 
 tui.vim_mode_default = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+"gpt-5.6-sol" = 4
 
 [projects."/Users/mikhailo/Developer/kokimoki-server"]
 trust_level = "trusted"
@@ -50,9 +54,8 @@ trust_level = "trusted"
 [projects."/Users/mikhailo/Developer/game-concepts/mike-test"]
 trust_level = "trusted"
 
-
-[tui.model_availability_nux]
-"gpt-5.5" = 4
+[projects."/Users/mikhailo/Developer/kokimoki-agent"]
+trust_level = "trusted"
 
 [features]
 terminal_resize_reflow = true

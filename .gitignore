@@ -103,6 +103,12 @@
 !.config/lazygit/
 !.config/lazygit/**
 
+# OpenCode (only currently verified non-secret config files)
+!.config/opencode/
+.config/opencode/*
+!.config/opencode/opencode.jsonc
+!.config/opencode/tui.json
+
 # Scripts
 !.config/scripts/
 !.config/scripts/**

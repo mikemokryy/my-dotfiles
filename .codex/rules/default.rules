@@ -70,3 +70,4 @@ prefix_rule(
     ],
 )
 prefix_rule(pattern=["swift", "test"], decision="allow")
+prefix_rule(pattern=["agent-browser"], decision="allow")
