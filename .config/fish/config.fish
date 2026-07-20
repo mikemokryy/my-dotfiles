@@ -25,6 +25,14 @@ set -gx CMAKE_PREFIX_PATH /opt/homebrew/opt/llvm
 # Set default config path
 set -gx XDG_CONFIG_HOME $HOME/.config
 
+# Load shared environment variables for applications launched from Fish.
+if test -r "$HOME/.env"
+    for line in (string match -r '^[A-Za-z_][A-Za-z0-9_]*=.*' <$HOME/.env)
+        set -l entry (string split -m 1 = -- $line)
+        set -gx $entry[1] $entry[2]
+    end
+end
+
 # Set up fzf key bindings
 fzf --fish | source
 
