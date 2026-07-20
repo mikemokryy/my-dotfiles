@@ -81,6 +81,7 @@
       "swift *": "allow",
       "test *": "allow",
       "agent-browser *": "allow",
+      "git *": "allow",
       "git commit *": "deny",
       "git push *": "deny",
       "git rebase *": "deny",
