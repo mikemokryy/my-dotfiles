@@ -23,6 +23,77 @@
       },
     }
   },
+  "agent": {
+    "build": {
+      "model": "{env:OPENCODE_MODEL}",
+      "variant": "high",
+      "permission": {
+        "question": "allow",
+        "plan_enter": "allow"
+      }
+    },
+    "plan": {
+      "model": "{env:OPENCODE_MODEL}",
+      "variant": "xhigh",
+      "permission": {
+        "question": "allow",
+        "plan_exit": "allow",
+        "task": {
+          "general": "deny"
+        },
+        "edit": {
+          "*": "deny",
+          ".opencode/plans/*.md": "allow",
+          ".local/share/opencode/plans/*.md": "allow"
+        }
+      }
+    },
+    "general": {
+      "model": "{env:OPENCODE_MODEL}",
+      "variant": "medium",
+      "permission": {
+        "todowrite": "deny"
+      }
+    },
+    "explore": {
+      "model": "{env:OPENCODE_SMALL_MODEL}",
+      "variant": "medium",
+      "permission": {
+        "*": "deny",
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "bash": "allow",
+        "webfetch": "allow",
+        "websearch": "allow",
+        "external_directory": {
+          "*": "ask"
+        }
+      }
+    },
+    "compaction": {
+      "model": "{env:OPENCODE_MODEL}",
+      "variant": "high",
+      "permission": {
+        "*": "deny"
+      }
+    },
+    "title": {
+      "model": "{env:OPENCODE_SMALL_MODEL}",
+      "variant": "medium",
+      "permission": {
+        "*": "deny"
+      }
+    },
+    "summary": {
+      "model": "{env:OPENCODE_SMALL_MODEL}",
+      "variant": "medium",
+      "permission": {
+        "*": "deny"
+      }
+    }
+  },
   "permission": {
     "*": "ask",
     "read": "allow",
@@ -32,9 +103,9 @@
     "todowrite": "allow",
     "question": "allow",
     "skill": "allow",
+    "task": "allow",
     "edit": "ask",
     "lsp": "ask",
-    "task": "ask",
     "webfetch": "ask",
     "websearch": "ask",
     "external_directory": "ask",
