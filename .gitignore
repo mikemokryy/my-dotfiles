@@ -112,6 +112,8 @@
 !.config/opencode/themes/**
 !.config/opencode/agents/
 !.config/opencode/agents/**
+!.config/opencode/commands/
+!.config/opencode/commands/**
 
 
 # Scripts
