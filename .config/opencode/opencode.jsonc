@@ -23,21 +23,18 @@
           "options": {
             "textVerbosity": "low",
             "reasoningSummary": "auto",
-            "include": ["reasoning.encrypted_content"]
           }
         },
         "gpt-5.6-luna": {
           "options": {
             "textVerbosity": "low",
             "reasoningSummary": "auto",
-            "include": ["reasoning.encrypted_content"]
           }
         },
         "gpt-5.6-sol": {
           "options": {
             "textVerbosity": "low",
             "reasoningSummary": "auto",
-            "include": ["reasoning.encrypted_content"]
           }
         }
       }
@@ -69,10 +66,10 @@
         "edit": {
           "*": "deny",
           ".opencode/plans/*.md": "allow",
-          ".local/share/opencode/plans/*.md": "allow",
+          ".local/share/opencode/plans/*.md": "allow"
         },
         "webfetch": "allow",
-        "websearch": "allow",
+        "websearch": "allow"
       }
     },
     "general": {
@@ -91,7 +88,7 @@
         "glob": "allow",
         "grep": "allow",
         "list": "allow",
-        "bash": "allow",
+        "lsp": "allow",
         "webfetch": "allow",
         "websearch": "allow",
         "external_directory": {
@@ -101,21 +98,21 @@
     },
     "compaction": {
       "model": "{env:OPENCODE_MODEL}",
-      "variant": "high",
+      "variant": "medium",
       "permission": {
         "*": "deny"
       }
     },
     "title": {
       "model": "{env:OPENCODE_SMALL_MODEL}",
-      "variant": "medium",
+      "variant": "none",
       "permission": {
         "*": "deny"
       }
     },
     "summary": {
-      "model": "{env:OPENCODE_SMALL_MODEL}",
-      "variant": "medium",
+      "model": "{env:OPENCODE_MODEL}",
+      "variant": "low",
       "permission": {
         "*": "deny"
       }
@@ -138,48 +135,10 @@
     "external_directory": "ask",
     "doom_loop": "ask",
     "bash": {
-      "*": "ask",
-      "cat *": "allow",
-      "head *": "allow",
-      "tail *": "allow",
-      "less *": "allow",
-      "wc *": "allow",
-      "file *": "allow",
-      "diff *": "allow",
-      "sort *": "allow",
-      "uniq *": "allow",
-      "awk *": "allow",
-      "sed *": "allow",
-      "cut *": "allow",
-      "tr *": "allow",
-      "grep *": "allow",
-      "rg *": "allow",
-      "find *": "allow",
-      "fd *": "allow",
-      "tree *": "allow",
-      "ls *": "allow",
-      "stat *": "allow",
-      "du *": "allow",
-      "pwd": "allow",
-      "pwd *": "allow",
-      "echo *": "allow",
-      "printf *": "allow",
-      "which *": "allow",
-      "dirname *": "allow",
-      "basename *": "allow",
-      "realpath *": "allow",
-      "env": "allow",
-      "env *": "allow",
-      "uname *": "allow",
-      "date": "allow",
-      "date *": "allow",
-      "xargs *": "allow",
-      "jq *": "allow",
-      "npm run *": "allow",
-      "swift *": "allow",
-      "test *": "allow",
-      "agent-browser *": "allow",
-      "git *": "allow",
+      "*": "allow",
+      "python*": "ask",
+      "node*": "ask",
+      "npx*": "ask",
       "git commit *": "deny",
       "git push *": "deny",
       "git rebase *": "deny",

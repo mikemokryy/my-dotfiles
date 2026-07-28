@@ -98,6 +98,20 @@ return {
     },
   },
 
+  -- LaTeX support
+  {
+    "lervag/vimtex",
+    lazy = false, -- we don't want to lazy load VimTeX
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_compiler_method = "tectonic"
+      vim.g.vimtex_compiler_tectonic = {
+        out_dir = "build",
+        options = { "--keep-logs", "--synctex" },
+      }
+    end,
+  },
+
   -- {
   --   "saghen/blink.cmp",
   --   opts = {
