@@ -43,6 +43,23 @@
       "options": {
         "apiKey": "{env:NEURALWATT_API_KEY}",
       },
+      "models": {
+        "glm-5.2": {
+          "options": {
+            "textVerbosity": "low",
+          }
+        },
+        "glm-5.2-short": {
+          "options": {
+            "textVerbosity": "low",
+          }
+        },
+        "glm-5.2-short-fast": {
+          "options": {
+            "textVerbosity": "low",
+          }
+        },
+      },
     }
   },
   "agent": {
@@ -56,7 +73,7 @@
     },
     "plan": {
       "model": "{env:OPENCODE_BIG_MODEL}",
-      "variant": "high",
+      "variant": "xhigh",
       "permission": {
         "question": "allow",
         "plan_exit": "allow",

@@ -1,8 +1,10 @@
 ---
 description: Bug diagnosis before implementation. Use for failing tests, stack traces, regressions, or incorrect behavior when the root cause is unknown.
 mode: subagent
-model: "openai/gpt-5.6-terra"
-variant: high
+model: "neuralwatt/glm-5.2"
+# model: "openai/gpt-5.6-terra"
+variant: xhigh
+# variant: high
 temperature: 0.1
 permission:
   edit: deny
