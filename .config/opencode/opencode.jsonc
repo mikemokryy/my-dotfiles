@@ -109,7 +109,8 @@
         "webfetch": "allow",
         "websearch": "allow",
         "external_directory": {
-          "*": "ask"
+          "*": "ask",
+          "~/Developer/**": "allow"
         }
       }
     },
@@ -149,7 +150,10 @@
     "lsp": "ask",
     "webfetch": "ask",
     "websearch": "ask",
-    "external_directory": "ask",
+    "external_directory": {
+      "*": "ask",
+      "~/Developer/**": "allow"
+    },
     "doom_loop": "ask",
     "bash": {
       "*": "allow",
