@@ -2,9 +2,7 @@
 description: Code review after implementation. Use to find correctness, regression, test, scope, and user-facing changelog issues in the requested changes without editing.
 mode: subagent
 model: "neuralwatt/glm-5.2"
-# model: "openai/gpt-5.6-terra"
-variant: xhigh
-# variant: high
+variant: high
 temperature: 0.1
 permission:
   edit: deny

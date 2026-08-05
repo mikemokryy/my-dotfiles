@@ -43,6 +43,19 @@
         "apiKey": "{env:NEURALWATT_API_KEY}",
       },
       "models": {
+        "deepseek-v4-flash": {
+          "options": {
+            "textVerbosity": "low",
+          },
+          "variants": {
+            "none": {
+              "thinking": {
+                "type": "disabled"
+              },
+              "reasoningEffort": "none"
+            },
+          },
+        },
         "glm-5.2": {
           "options": {
             "textVerbosity": "low",
@@ -54,36 +67,6 @@
               },
               "reasoningEffort": "none"
             },
-            "low": {
-              "thinking": {
-                "type": "enabled"
-              },
-              "reasoningEffort": "low"
-            },
-            "medium": {
-              "thinking": {
-                "type": "enabled"
-              },
-              "reasoningEffort": "medium"
-            },
-            "high": {
-              "thinking": {
-                "type": "enabled"
-              },
-              "reasoningEffort": "high"
-            },
-            "xhigh": {
-              "thinking": {
-                "type": "enabled"
-              },
-              "reasoningEffort": "xhigh"
-            },
-            "max": {
-              "thinking": {
-                "type": "enabled"
-              },
-              "reasoningEffort": "max"
-            }
           }
         },
         "glm-5.2-short": {
@@ -102,26 +85,12 @@
   "agent": {
     "build": {
       "model": "{env:OPENCODE_MODEL}",
-      "variant": "high",
-      "permission": {
-        "question": "allow",
-        "plan_enter": "allow"
-      }
+      "variant": "max",
     },
     "plan": {
       "model": "{env:OPENCODE_BIG_MODEL}",
-      "variant": "xhigh",
+      "variant": "high",
       "permission": {
-        "question": "allow",
-        "plan_exit": "allow",
-        "task": {
-          "general": "deny"
-        },
-        "edit": {
-          "*": "deny",
-          ".opencode/plans/*.md": "allow",
-          ".local/share/opencode/plans/*.md": "allow"
-        },
         "webfetch": "allow",
         "websearch": "allow"
       }
@@ -129,20 +98,11 @@
     "general": {
       "model": "{env:OPENCODE_MODEL}",
       "variant": "medium",
-      "permission": {
-        "todowrite": "deny"
-      }
     },
     "explore": {
       "model": "{env:OPENCODE_SMALL_MODEL}",
       "variant": "medium",
       "permission": {
-        "*": "deny",
-        "read": "allow",
-        "glob": "allow",
-        "grep": "allow",
-        "list": "allow",
-        "lsp": "allow",
         "webfetch": "allow",
         "websearch": "allow",
         "external_directory": {
@@ -154,23 +114,14 @@
     "compaction": {
       "model": "{env:OPENCODE_MODEL}",
       "variant": "medium",
-      "permission": {
-        "*": "deny"
-      }
     },
     "title": {
       "model": "{env:OPENCODE_SMALL_MODEL}",
       "variant": "none",
-      "permission": {
-        "*": "deny"
-      }
     },
     "summary": {
       "model": "{env:OPENCODE_MODEL}",
       "variant": "low",
-      "permission": {
-        "*": "deny"
-      }
     }
   },
   "permission": {

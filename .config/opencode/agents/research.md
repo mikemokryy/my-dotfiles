@@ -2,9 +2,7 @@
 description: External documentation and upstream-source research. Use to verify APIs, dependency behavior, versions, or disputed technical claims; not for routine code search, bug triage, or change review.
 mode: subagent
 model: "neuralwatt/glm-5.2"
-# model: "openai/gpt-5.6-sol"
 variant: max
-# variant: xhigh
 temperature: 0.1
 permission:
   edit: deny
