@@ -107,7 +107,8 @@
         "websearch": "allow",
         "external_directory": {
           "*": "ask",
-          "~/Developer/**": "allow"
+          "~/Developer/**": "allow",
+          "/tmp/**": "allow"
         }
       }
     },
@@ -140,7 +141,8 @@
     "websearch": "ask",
     "external_directory": {
       "*": "ask",
-      "~/Developer/**": "allow"
+      "~/Developer/**": "allow",
+      "/tmp/**": "allow"
     },
     "doom_loop": "ask",
     "bash": {

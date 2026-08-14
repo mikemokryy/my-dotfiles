@@ -2,7 +2,7 @@
 description: Bug diagnosis before implementation. Use for failing tests, stack traces, regressions, or incorrect behavior when the root cause is unknown.
 mode: subagent
 model: "neuralwatt/glm-5.2"
-variant: high
+variant: max
 temperature: 0.1
 permission:
   edit: deny

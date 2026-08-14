@@ -1,8 +1,8 @@
 ---
 description: External documentation and upstream-source research. Use to verify APIs, dependency behavior, versions, or disputed technical claims; not for routine code search, bug triage, or change review.
 mode: subagent
-model: "neuralwatt/glm-5.2"
-variant: max
+model: "neuralwatt/kimi-k3"
+variant: high
 temperature: 0.1
 permission:
   edit: deny

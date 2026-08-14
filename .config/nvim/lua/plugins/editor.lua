@@ -112,35 +112,35 @@ return {
     end,
   },
 
-  -- {
-  --   "saghen/blink.cmp",
-  --   opts = {
-  --     keymap = {
-  --       preset = "super-tab",
-  --       -- ["<Tab>"] = {
-  --       --   "snippet_forward",
-  --       --   function() -- sidekick next edit suggestion
-  --       --     return require("sidekick").nes_jump_or_apply()
-  --       --   end,
-  --       --   function() -- if you are using Neovim's native inline completions
-  --       --     return vim.lsp.inline_completion.get()
-  --       --   end,
-  --       --   "fallback",
-  --       -- },
-  --     },
-  --     completion = {
-  --       ghost_text = {
-  --         -- show_with_menu = false, -- only show when menu is closed
-  --       },
-  --       menu = {
-  --         winblend = vim.o.pumblend,
-  --       },
-  --     },
-  --     signature = {
-  --       window = {
-  --         winblend = vim.o.pumblend,
-  --       },
-  --     },
-  --   },
-  -- },
+  {
+    "saghen/blink.cmp",
+    opts = {
+      keymap = {
+        preset = "super-tab",
+        -- ["<Tab>"] = {
+        --   "snippet_forward",
+        --   function() -- sidekick next edit suggestion
+        --     return require("sidekick").nes_jump_or_apply()
+        --   end,
+        --   function() -- if you are using Neovim's native inline completions
+        --     return vim.lsp.inline_completion.get()
+        --   end,
+        --   "fallback",
+        -- },
+      },
+      completion = {
+        ghost_text = {
+          -- show_with_menu = false, -- only show when menu is closed
+        },
+        menu = {
+          winblend = vim.o.pumblend,
+        },
+      },
+      signature = {
+        window = {
+          winblend = vim.o.pumblend,
+        },
+      },
+    },
+  },
 }
