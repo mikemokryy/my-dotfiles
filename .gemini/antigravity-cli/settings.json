@@ -79,19 +79,6 @@
   },
   "subagent_model": "gemini-3.5-flash-high",
   "toolPermission": "strict",
-  "trustedWorkspaces": [
-    "/Users/mikhailo/Developer/kokimoki-server",
-    "/Users/mikhailo/Developer/gfc-platform",
-    "/Users/mikhailo/Developer/LoquizIOS",
-    "/Users/mikhailo/Developer/kokimoki-sdk",
-    "/Users/mikhailo/Developer/game-concepts/coffee-prophesy-1",
-    "/Users/mikhailo/Developer/host-starter-template",
-    "/Users/mikhailo/Developer/Research/DecisioNet",
-    "/Users/mikhailo/Developer/game-concepts/meet-and-connect-new",
-    "/Users/mikhailo/Developer/loquiz-server",
-    "/Users/mikhailo/Developer/loquiz-creator",
-    "/Users/mikhailo/Developer/game-concepts/mike-test",
-    "/Users/mikhailo"
-  ],
+  "trustedWorkspaces": [],
   "verbosity": "low"
 }

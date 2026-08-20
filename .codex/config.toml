@@ -18,45 +18,6 @@ tui.vim_mode_default = true
 "gpt-5.5" = 4
 "gpt-5.6-sol" = 4
 
-[projects."/Users/mikhailo/Developer/kokimoki-server"]
-trust_level = "trusted"
-
-[projects."/Users/mikhailo"]
-trust_level = "trusted"
-
-[projects."/Users/mikhailo/Developer/gfc-platform"]
-trust_level = "trusted"
-
-[projects."/Users/mikhailo/Developer/LoquizIOS"]
-trust_level = "trusted"
-
-[projects."/Users/mikhailo/Developer/kokimoki-sdk"]
-trust_level = "trusted"
-
-[projects."/Users/mikhailo/Developer/game-concepts/coffee-prophesy-1"]
-trust_level = "trusted"
-
-[projects."/Users/mikhailo/Developer/host-starter-template"]
-trust_level = "trusted"
-
-[projects."/Users/mikhailo/Developer/Research/DecisioNet"]
-trust_level = "trusted"
-
-[projects."/Users/mikhailo/Developer/game-concepts/meet-and-connect-new"]
-trust_level = "trusted"
-
-[projects."/Users/mikhailo/Developer/loquiz-server"]
-trust_level = "trusted"
-
-[projects."/Users/mikhailo/Developer/loquiz-creator"]
-trust_level = "trusted"
-
-[projects."/Users/mikhailo/Developer/game-concepts/mike-test"]
-trust_level = "trusted"
-
-[projects."/Users/mikhailo/Developer/kokimoki-agent"]
-trust_level = "trusted"
-
 [features]
 terminal_resize_reflow = true
 prevent_idle_sleep = true
@@ -65,8 +26,4 @@ prevent_idle_sleep = true
 hide_rate_limit_model_nudge = true
 
 [analytics]
-enabled = false
-
-[[skills.config]]
-path = "/Users/mikhailo/.codex/skills/.system/imagegen/SKILL.md"
 enabled = false
