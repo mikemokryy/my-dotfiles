@@ -1,7 +1,7 @@
 ---
 description: Code review after implementation. Use to find correctness, regression, test, scope, and user-facing changelog issues in the requested changes without editing.
 mode: subagent
-model: "neuralwatt/glm-5.2"
+model: "neuralwatt/glm-5.3"
 variant: high
 temperature: 0.1
 permission:
