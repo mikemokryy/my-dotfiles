@@ -2,15 +2,17 @@
 description: Scientific writer for journal articles and the PhD thesis. Produces formal, non-plagiarized, fact-checked LaTeX (or plain prose on request) following the Thesis project's conventions; verifies citations against references.bib and primary sources. Use for drafting, revising, or fact-checking thesis chapters and paper sections.
 mode: subagent
 model: "neuralwatt/glm-5.3"
-variant: max
+variant: none
 temperature: 0.3
 permission:
   edit: allow
   webfetch: allow
   websearch: allow
   bash:
-    "*": deny
     "tectonic *": allow
+    "latexindent *": allow
+    "python*": deny
+    "node*": deny
   task: deny
   external_directory:
     "*": ask
@@ -54,6 +56,10 @@ Subfile pattern:
 ```
 
 Numbered parts: `\section{Title}`. Front/back matter (Intro, Conclusions, References, Abbreviations): `\section*{Title}` + `\addcontentsline{toc}{section}{Title}`. End every chapter with `\subsection{Chapter Summary}` stating the research gap. Math: `amsmath` environments. Theorems via the predefined `theorem`/`lemma`/`proposition`/`definition`/`remark` environments. Use compact `itemize` lists (project `--` bullets). No new custom commands.
+
+## Editing files
+
+Make every file change with the `write`/`edit` tools. Never use `bash`, `python`, `node`, `perl`, `sed`, or `awk` to read or write `.tex` (or any other) files, and never splice content with heredocs or inline scripts. To place a block, anchor the `edit` on surrounding lines. When asked for the content in chat, output it directly instead of writing a scratch file.
 
 ## Output
 

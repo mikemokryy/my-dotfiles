@@ -56,7 +56,20 @@
             },
           },
         },
-        "glm-5.2": {
+        "deepseek-v4.1-flash": {
+          "options": {
+            "textVerbosity": "low",
+          },
+          "variants": {
+            "none": {
+              "thinking": {
+                "type": "disabled"
+              },
+              "reasoningEffort": "none"
+            },
+          },
+        },
+        "glm-5.3": {
           "options": {
             "textVerbosity": "low",
           },
@@ -69,12 +82,12 @@
             },
           }
         },
-        "glm-5.2-short": {
+        "glm-5.3-short": {
           "options": {
             "textVerbosity": "low",
           }
         },
-        "glm-5.2-short-fast": {
+        "glm-5.3-short-fast": {
           "options": {
             "textVerbosity": "low",
           },
@@ -85,7 +98,7 @@
   "agent": {
     "build": {
       "model": "{env:OPENCODE_MODEL}",
-      "variant": "max",
+      "variant": "xhigh",
     },
     "plan": {
       "model": "{env:OPENCODE_BIG_MODEL}",
@@ -157,6 +170,7 @@
       "git clean *": "deny",
       "git merge *": "deny",
       "git tag *": "deny",
+      "gh *": "deny",
       "ssh *": "deny",
       "scp *": "deny",
       "sudo *": "deny",
