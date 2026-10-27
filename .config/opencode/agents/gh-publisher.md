@@ -6,6 +6,7 @@ temperature: 0.1
 permission:
   bash:
     "gh issue *": allow
+    "gh project item-add *": allow
   edit:
     "*": ask
     "/tmp/**": allow
