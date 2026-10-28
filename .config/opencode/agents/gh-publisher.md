@@ -1,5 +1,5 @@
 ---
-description: Writes structured GitHub issue bodies and creates them via gh. Invoked by the /issue command.
+description: Writes structured GitHub issue bodies and creates them via gh. Invoked by the /create-issue command.
 mode: subagent
 model: neuralwatt/deepseek-v4.1-flash
 temperature: 0.1
