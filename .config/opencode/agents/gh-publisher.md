@@ -1,18 +1,29 @@
 ---
 description: Writes structured GitHub issue bodies and creates them via gh. Invoked by the /create-issue command.
 mode: subagent
-model: neuralwatt/deepseek-v4.1-flash
-temperature: 0.1
-permission:
-  bash:
-    "gh issue *": allow
-    "gh project item-add *": allow
-    "gh api users/*": allow
-    "gh auth status": allow
-  edit:
-    "*": ask
-    "/tmp/**": allow
-  task: deny
+model: neuralwatt/deepseek-v4.1-flash#gh-publisher
+permissions:
+  - action: shell
+    resource: "gh issue *"
+    effect: allow
+  - action: shell
+    resource: "gh project item-add *"
+    effect: allow
+  - action: shell
+    resource: "gh api users/*"
+    effect: allow
+  - action: shell
+    resource: "gh auth status"
+    effect: allow
+  - action: edit
+    resource: "*"
+    effect: ask
+  - action: edit
+    resource: "/tmp/*"
+    effect: allow
+  - action: subagent
+    resource: "*"
+    effect: deny
 ---
 
 You draft GitHub issue bodies and publish them with `gh`. Follow the `issue-writer` skill named by the caller.
