@@ -7,6 +7,8 @@ permission:
   bash:
     "gh issue *": allow
     "gh project item-add *": allow
+    "gh api users/*": allow
+    "gh auth status": allow
   edit:
     "*": ask
     "/tmp/**": allow
