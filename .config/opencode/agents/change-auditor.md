@@ -1,22 +1,29 @@
 ---
 description: Code review after implementation. Use to find correctness, regression, test, scope, and user-facing changelog issues in the requested changes without editing.
 mode: subagent
-model: "neuralwatt/glm-5.3"
-variant: high
-temperature: 0.1
-permission:
-  edit: deny
-  task: deny
-  bash:
-    "*": deny
-    "git status": allow
-    "git status *": allow
-    "git diff": allow
-    "git diff *": allow
-    "git log": allow
-    "git log *": allow
-    "git show": allow
-    "git show *": allow
+model: "neuralwatt/glm-5.3#change-auditor"
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
+  - action: subagent
+    resource: "*"
+    effect: deny
+  - action: shell
+    resource: "*"
+    effect: deny
+  - action: shell
+    resource: "git status *"
+    effect: allow
+  - action: shell
+    resource: "git diff *"
+    effect: allow
+  - action: shell
+    resource: "git log *"
+    effect: allow
+  - action: shell
+    resource: "git show *"
+    effect: allow
 ---
 
 Review the requested changes independently. Do not edit, stage, commit, revert, run tests, or delegate tasks. Treat a dirty worktree as intentional.

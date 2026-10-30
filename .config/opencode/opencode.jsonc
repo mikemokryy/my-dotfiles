@@ -3,186 +3,420 @@
   "username": "Mykhailo",
   "shell": "/bin/zsh",
   "model": "{env:OPENCODE_MODEL}",
-  "small_model": "{env:OPENCODE_SMALL_MODEL}",
   "default_agent": "build",
   "share": "disabled",
-  "autoupdate": "notify",
+  "update": "notify",
   "formatter": true,
   "instructions": [
     "AGENTS.md"
   ],
-  "enabled_providers": [
-    "openai",
-    "neuralwatt"
+  "experimental": {
+    "todo": true
+  },
+  "policies": [
+    {
+      "action": "provider.use",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "provider.use",
+      "resource": "openai",
+      "effect": "allow"
+    },
+    {
+      "action": "provider.use",
+      "resource": "neuralwatt",
+      "effect": "allow"
+    }
   ],
-  "provider": {
+  "permissions": [
+    {
+      "action": "*",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "read",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "glob",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "grep",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "list",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "todowrite",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "question",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "skill",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "subagent",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "edit",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "webfetch",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "websearch",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "external_directory",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/Developer/*",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "/tmp/*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "shell",
+      "resource": "python*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "node*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "npx*",
+      "effect": "ask"
+    },
+    {
+      "action": "shell",
+      "resource": "git commit *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git push *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git rebase *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git reset *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git clean *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git merge *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "git tag *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "gh *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "ssh *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "scp *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "sudo *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "su *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "eval *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "exec *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "source *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "dd *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "mkfs *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "shutdown *",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "reboot *",
+      "effect": "deny"
+    }
+  ],
+  "providers": {
     "openai": {
       "models": {
         "gpt-5.6-terra": {
-          "options": {
+          "settings": {
             "textVerbosity": "low",
-            "reasoningSummary": "auto",
+            "reasoningSummary": "auto"
           }
         },
         "gpt-5.6-luna": {
-          "options": {
+          "settings": {
             "textVerbosity": "low",
-            "reasoningSummary": "auto",
+            "reasoningSummary": "auto"
           }
         },
         "gpt-5.6-sol": {
-          "options": {
+          "settings": {
             "textVerbosity": "low",
-            "reasoningSummary": "auto",
+            "reasoningSummary": "auto"
           }
         }
       }
     },
     "neuralwatt": {
-      "options": {
-        "apiKey": "{env:NEURALWATT_API_KEY}",
+      "settings": {
+        "apiKey": "{env:NEURALWATT_API_KEY}"
       },
       "models": {
         "deepseek-v4-flash": {
-          "options": {
-            "textVerbosity": "low",
+          "settings": {
+            "textVerbosity": "low"
           },
-          "variants": {
-            "none": {
-              "thinking": {
-                "type": "disabled"
-              },
-              "reasoningEffort": "none"
-            },
-          },
+          "variants": [
+            {
+              "id": "none",
+              "settings": {
+                "thinking": {
+                  "type": "disabled"
+                },
+                "reasoningEffort": "none"
+              }
+            }
+          ]
         },
         "deepseek-v4.1-flash": {
-          "options": {
-            "textVerbosity": "low",
+          "settings": {
+            "textVerbosity": "low"
           },
-          "variants": {
-            "none": {
-              "thinking": {
-                "type": "disabled"
-              },
-              "reasoningEffort": "none"
+          "variants": [
+            {
+              "id": "none",
+              "settings": {
+                "thinking": {
+                  "type": "disabled"
+                },
+                "reasoningEffort": "none"
+              }
             },
-          },
+            {
+              "id": "gh-publisher",
+              "body": {
+                "temperature": 0.1
+              }
+            }
+          ]
         },
         "glm-5.3": {
-          "options": {
-            "textVerbosity": "low",
+          "settings": {
+            "textVerbosity": "low"
           },
-          "variants": {
-            "none": {
-              "thinking": {
-                "type": "disabled"
-              },
-              "reasoningEffort": "none"
+          "variants": [
+            {
+              "id": "none",
+              "settings": {
+                "thinking": {
+                  "type": "disabled"
+                },
+                "reasoningEffort": "none"
+              }
             },
-          }
+            {
+              "id": "academic-writer",
+              "settings": {
+                "thinking": {
+                  "type": "disabled"
+                },
+                "reasoningEffort": "none"
+              },
+              "body": {
+                "temperature": 0.3
+              }
+            },
+            {
+              "id": "bug-triage",
+              "settings": {
+                "reasoningEffort": "max"
+              },
+              "body": {
+                "temperature": 0.1
+              }
+            },
+            {
+              "id": "change-auditor",
+              "settings": {
+                "reasoningEffort": "high"
+              },
+              "body": {
+                "temperature": 0.1
+              }
+            }
+          ]
         },
         "glm-5.3-short": {
-          "options": {
-            "textVerbosity": "low",
+          "settings": {
+            "textVerbosity": "low"
           }
         },
         "glm-5.3-short-fast": {
-          "options": {
-            "textVerbosity": "low",
-          },
+          "settings": {
+            "textVerbosity": "low"
+          }
         },
-      },
-    }
-  },
-  "agent": {
-    "build": {
-      "model": "{env:OPENCODE_MODEL}",
-      "variant": "xhigh",
-    },
-    "plan": {
-      "model": "{env:OPENCODE_BIG_MODEL}",
-      "variant": "high",
-      "permission": {
-        "webfetch": "allow",
-        "websearch": "allow"
-      }
-    },
-    "general": {
-      "model": "{env:OPENCODE_MODEL}",
-      "variant": "medium",
-    },
-    "explore": {
-      "model": "{env:OPENCODE_SMALL_MODEL}",
-      "variant": "medium",
-      "permission": {
-        "webfetch": "allow",
-        "websearch": "allow",
-        "external_directory": {
-          "*": "ask",
-          "~/Developer/**": "allow",
-          "/tmp/**": "allow"
+        "kimi-k3": {
+          "variants": [
+            {
+              "id": "research",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            }
+          ]
         }
       }
-    },
-    "compaction": {
-      "model": "{env:OPENCODE_MODEL}",
-      "variant": "medium",
-    },
-    "title": {
-      "model": "{env:OPENCODE_SMALL_MODEL}",
-      "variant": "none",
-    },
-    "summary": {
-      "model": "{env:OPENCODE_MODEL}",
-      "variant": "low",
     }
   },
-  "permission": {
-    "*": "ask",
-    "read": "allow",
-    "glob": "allow",
-    "grep": "allow",
-    "list": "allow",
-    "todowrite": "allow",
-    "question": "allow",
-    "skill": "allow",
-    "task": "allow",
-    "edit": "ask",
-    "lsp": "ask",
-    "webfetch": "ask",
-    "websearch": "ask",
-    "external_directory": {
-      "*": "ask",
-      "~/Developer/**": "allow",
-      "/tmp/**": "allow"
+  "agents": {
+    "build": {
+      "model": "{env:OPENCODE_MODEL}#xhigh"
     },
-    "doom_loop": "ask",
-    "bash": {
-      "*": "allow",
-      "python*": "ask",
-      "node*": "ask",
-      "npx*": "ask",
-      "git commit *": "deny",
-      "git push *": "deny",
-      "git rebase *": "deny",
-      "git reset *": "deny",
-      "git clean *": "deny",
-      "git merge *": "deny",
-      "git tag *": "deny",
-      "gh *": "deny",
-      "ssh *": "deny",
-      "scp *": "deny",
-      "sudo *": "deny",
-      "su *": "deny",
-      "su": "deny",
-      "eval *": "deny",
-      "exec *": "deny",
-      "source *": "deny",
-      "dd *": "deny",
-      "mkfs *": "deny",
-      "shutdown *": "deny",
-      "reboot *": "deny"
+    "plan": {
+      "model": "{env:OPENCODE_BIG_MODEL}#high",
+      "permissions": [
+        {
+          "action": "webfetch",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "websearch",
+          "resource": "*",
+          "effect": "allow"
+        }
+      ]
+    },
+    "general": {
+      "model": "{env:OPENCODE_MODEL}#high"
+    },
+    "explore": {
+      "model": "{env:OPENCODE_SMALL_MODEL}#high",
+      "permissions": [
+        {
+          "action": "webfetch",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "websearch",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "external_directory",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "external_directory",
+          "resource": "~/Developer/*",
+          "effect": "allow"
+        },
+        {
+          "action": "external_directory",
+          "resource": "/tmp/*",
+          "effect": "allow"
+        }
+      ]
+    },
+    "compaction": {
+      "model": "{env:OPENCODE_MODEL}#high"
+    },
+    "title": {
+      "model": "{env:OPENCODE_SMALL_MODEL}#none"
+    },
+    "summary": {
+      "model": "{env:OPENCODE_MODEL}#low"
     }
   }
 }

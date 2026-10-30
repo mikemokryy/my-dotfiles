@@ -64,16 +64,23 @@ Quote error output verbatim. Use the template's title prefix (for example `[Bug]
 
 ## Publish
 
-Write the body to `/tmp/issue-body.md` and show the proposed title and body. Create the issue with the template's metadata, not the example values:
+Before creating the issue, validate metadata that would fail after creation:
+
+- Resolve every assignee with `gh api users/<login> --jq .login`. If a login does not resolve, ask the user for the correct login; never substitute a guess from git history.
+- Check `gh auth status` for `read:project` when the template names a project. If it is missing, tell the user before creating.
+
+Write the body to `/tmp/issue-body.md` and show the proposed title and body. Create the issue with the template's metadata, replacing the placeholders:
 
 ```bash
 gh issue create \
   --title "[Bug]: <title>" \
   --body-file /tmp/issue-body.md \
-  --label "low" \
-  --assignee "MikhailoMokryy" \
+  --label "<label>" \
+  --assignee "<login>" \
   --type "Bug"
 ```
+
+`gh issue create` creates the issue before applying assignees, labels, and project, so a metadata error leaves the issue behind. If it exits with an assignment or label error, do not rerun it: find the just-created issue with `gh issue list --author @me --limit 5` and fix it with `gh issue edit <url> --add-assignee <login>` or `--add-label <label>`.
 
 Add `--type` only when `gh issue create --help` lists it. Use `--project "<title>"` for a project title; for an `owner/number` entry, create the issue first, then add it:
 
