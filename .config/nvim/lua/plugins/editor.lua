@@ -103,12 +103,24 @@ return {
     "lervag/vimtex",
     lazy = false, -- we don't want to lazy load VimTeX
     init = function()
-      -- VimTeX configuration goes here, e.g.
       vim.g.vimtex_compiler_method = "tectonic"
-      vim.g.vimtex_compiler_tectonic = {
-        out_dir = "build",
-        options = { "--keep-logs", "--synctex" },
-      }
+
+      -- Compile every .tex below the repo root into <repo>/build.
+      -- VimTeX resolves a relative out_dir against the main file's directory,
+      -- so derive an absolute path from the git root instead.
+      local root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+      if vim.v.shell_error == 0 and root and root ~= "" then
+        vim.fn.mkdir(root .. "/build", "p") -- tectonic does not create it
+        vim.g.vimtex_compiler_tectonic = {
+          out_dir = root .. "/build",
+          options = { "--keep-logs", "--synctex" },
+        }
+      else
+        vim.g.vimtex_compiler_tectonic = {
+          out_dir = "build",
+          options = { "--keep-logs", "--synctex" },
+        }
+      end
     end,
   },
 

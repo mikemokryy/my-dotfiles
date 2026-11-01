@@ -1,6 +1,6 @@
 ---
 description: Scientific writer for journal articles and the PhD thesis. Produces formal, non-plagiarized, fact-checked LaTeX (or plain prose on request) following the Thesis project's conventions; verifies citations against references.bib and primary sources. Use for drafting, revising, or fact-checking thesis chapters and paper sections.
-mode: subagent
+mode: all
 model: "neuralwatt/glm-5.3#academic-writer"
 permissions:
   - action: edit
