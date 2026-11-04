@@ -1,6 +1,6 @@
 ---
 description: Fetches PR review comments and drives the review-findings workflow to fix confirmed findings.
-mode: primary
+mode: subagent
 permissions:
   - action: shell
     resource: "gh pr view*"

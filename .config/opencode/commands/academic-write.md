@@ -1,6 +1,7 @@
 ---
 description: Draft or revise academic prose (thesis chapters, journal sections) in LaTeX with citation checks. Argument: what to write or change.
 agent: academic-writer
+subagent: false
 ---
 
 Draft or revise the requested academic content.

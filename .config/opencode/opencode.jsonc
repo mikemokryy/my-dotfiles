@@ -303,18 +303,6 @@
               }
             },
             {
-              "id": "academic-writer",
-              "settings": {
-                "thinking": {
-                  "type": "disabled"
-                },
-                "reasoningEffort": "none"
-              },
-              "body": {
-                "temperature": 0.3
-              }
-            },
-            {
               "id": "bug-triage",
               "settings": {
                 "reasoningEffort": "max"
@@ -347,6 +335,18 @@
         "kimi-k3": {
           "variants": [
             {
+              "id": "academic-writer",
+              "settings": {
+                "thinking": {
+                  "type": "disabled"
+                },
+                "reasoningEffort": "none"
+              },
+              "body": {
+                "temperature": 0.3
+              }
+            },
+            {
               "id": "research",
               "settings": {
                 "reasoningEffort": "high"
@@ -360,6 +360,33 @@
   "agents": {
     "build": {
       "model": "{env:OPENCODE_MODEL}#xhigh"
+    },
+    "forge": {
+      "description": "Build agent with file edits and web research pre-approved",
+      "mode": "primary",
+      "model": "{env:OPENCODE_MODEL}#xhigh",
+      "permissions": [
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "webfetch",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "websearch",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "python*",
+          "effect": "allow"
+        }
+      ]
     },
     "plan": {
       "model": "{env:OPENCODE_BIG_MODEL}#high",
@@ -380,7 +407,7 @@
       "model": "{env:OPENCODE_MODEL}#high"
     },
     "explore": {
-      "model": "{env:OPENCODE_SMALL_MODEL}#high",
+      "model": "{env:OPENCODE_MODEL}#low",
       "permissions": [
         {
           "action": "webfetch",
@@ -413,7 +440,7 @@
       "model": "{env:OPENCODE_MODEL}#high"
     },
     "title": {
-      "model": "{env:OPENCODE_SMALL_MODEL}#none"
+      "model": "{env:OPENCODE_MODEL}#none"
     },
     "summary": {
       "model": "{env:OPENCODE_MODEL}#low"
