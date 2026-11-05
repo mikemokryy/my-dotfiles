@@ -13,18 +13,24 @@ vim.api.nvim_create_autocmd("InsertEnter", {
   command = "set norelativenumber",
 })
 
--- Turn off paste mode when leaving insert and enable relative line numbers
+-- Enable relative line numbers and leave paste mode when leaving insert
 vim.api.nvim_create_autocmd("InsertLeave", {
   pattern = "*",
-  command = "set relativenumber",
+  command = "set relativenumber | set nopaste",
 })
 
--- Trigger filetype for astro and Podfile
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.astro",
-  command = "setf astro",
+-- Cursorline only in the active window
+local cursorline_group = vim.api.nvim_create_augroup("UserCursorline", { clear = true })
+vim.api.nvim_create_autocmd({ "VimEnter", "WinEnter", "BufWinEnter" }, {
+  group = cursorline_group,
+  command = "setlocal cursorline",
+})
+vim.api.nvim_create_autocmd("WinLeave", {
+  group = cursorline_group,
+  command = "setlocal nocursorline",
 })
 
+-- Trigger filetype for Podfile
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "Podfile",
   command = "setf ruby",

@@ -1,4 +1,16 @@
 return {
+  -- completion (LazyVim's coding.blink extra provides the rest)
+  {
+    "saghen/blink.cmp",
+    opts = {
+      completion = {
+        menu = {
+          border = "none",
+        },
+      },
+    },
+  },
+
   -- notifications
   {
     "folke/noice.nvim",

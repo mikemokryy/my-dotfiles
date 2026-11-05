@@ -418,21 +418,6 @@
           "action": "websearch",
           "resource": "*",
           "effect": "allow"
-        },
-        {
-          "action": "external_directory",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "external_directory",
-          "resource": "~/Developer/*",
-          "effect": "allow"
-        },
-        {
-          "action": "external_directory",
-          "resource": "/tmp/*",
-          "effect": "allow"
         }
       ]
     },

@@ -18,9 +18,6 @@ permissions:
   - action: websearch
     resource: "*"
     effect: allow
-  - action: question
-    resource: "*"
-    effect: allow
 ---
 
 Research the requested claim independently. Prefer primary sources, versioned documentation, and upstream source over summaries. Separate verified facts from inference, and cite links or file paths for material claims.

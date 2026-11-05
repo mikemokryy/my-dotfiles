@@ -13,3 +13,4 @@ customCommands:
     output: terminal
 gui:
   mouseEvents: false
+  scrollHeight: 30

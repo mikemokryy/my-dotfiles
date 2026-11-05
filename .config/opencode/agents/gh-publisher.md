@@ -16,9 +16,6 @@ permissions:
     resource: "gh auth status"
     effect: allow
   - action: edit
-    resource: "*"
-    effect: ask
-  - action: edit
     resource: "/tmp/*"
     effect: allow
   - action: subagent

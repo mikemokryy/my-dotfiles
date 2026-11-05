@@ -46,13 +46,7 @@ permissions:
     resource: "*"
     effect: deny
   - action: external_directory
-    resource: "*"
-    effect: ask
-  - action: external_directory
     resource: "~/Documents/Research/*"
-    effect: allow
-  - action: external_directory
-    resource: "/tmp/*"
     effect: allow
 ---
 
