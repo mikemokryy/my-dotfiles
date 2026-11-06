@@ -91,6 +91,10 @@
 !.config/fish/functions/cpwd.fish
 !.config/fish/functions/fish_greeting.fish
 !.config/fish/functions/fish_prompt.fish
+!.config/fish/functions/use-llvm.fish
+!.config/fish/themes/
+.config/fish/themes/*
+!.config/fish/themes/terafox.theme
 
 # Tmux
 !.config/tmux/

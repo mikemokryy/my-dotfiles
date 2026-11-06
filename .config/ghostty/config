@@ -35,36 +35,34 @@ keybind = alt+right=unbind
 
 
 # Nightfox colors for Ghostty
-## name: nightfox
-## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox/nightfox.ghostty
+## name: terafox
+## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/terafox/terafox.ghostty
 
-theme =nightfox
-
-background = #192330
-foreground = #cdcecf
-selection-background = #2b3b51
-selection-foreground = #cdcecf
-cursor-color = #cdcecf
+background = #152528
+foreground = #e6eaea
+selection-background = #293e40
+selection-foreground = #e6eaea
+cursor-color = #e6eaea
 
 # normal
-palette = 0=#393b44
-palette = 1=#c94f6d
-palette = 2=#81b29a
-palette = 3=#dbc074
-palette = 4=#719cd6
-palette = 5=#9d79d6
-palette = 6=#63cdcf
-palette = 7=#dfdfe0
+palette = 0=#2f3239
+palette = 1=#e85c51
+palette = 2=#7aa4a1
+palette = 3=#fda47f
+palette = 4=#5a93aa
+palette = 5=#ad5c7c
+palette = 6=#a1cdd8
+palette = 7=#ebebeb
 
 # bright
-palette = 8=#575860
-palette = 9=#d16983
-palette = 10=#8ebaa4
-palette = 11=#e0c989
-palette = 12=#86abdc
-palette = 13=#baa1e2
-palette = 14=#7ad5d6
-palette = 15=#e4e4e5
+palette = 8=#4e5157
+palette = 9=#eb746b
+palette = 10=#8eb2af
+palette = 11=#fdb292
+palette = 12=#73a3b7
+palette = 13=#b97490
+palette = 14=#afd4de
+palette = 15=#eeeeee
 
 # extended colors
-palette = 16=#f4a261
+palette = 16=#ff8349
