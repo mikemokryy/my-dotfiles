@@ -6,12 +6,6 @@ permissions:
   - action: edit
     resource: "*"
     effect: allow
-  - action: webfetch
-    resource: "*"
-    effect: allow
-  - action: websearch
-    resource: "*"
-    effect: allow
   - action: shell
     resource: "tectonic *"
     effect: allow

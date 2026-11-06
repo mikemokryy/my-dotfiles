@@ -84,12 +84,12 @@
     {
       "action": "webfetch",
       "resource": "*",
-      "effect": "ask"
+      "effect": "allow"
     },
     {
       "action": "websearch",
       "resource": "*",
-      "effect": "ask"
+      "effect": "allow"
     },
     {
       "action": "external_directory",
@@ -372,16 +372,6 @@
           "effect": "allow"
         },
         {
-          "action": "webfetch",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "websearch",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
           "action": "shell",
           "resource": "python*",
           "effect": "allow"
@@ -389,46 +379,46 @@
       ]
     },
     "plan": {
-      "model": "{env:OPENCODE_BIG_MODEL}#high",
-      "permissions": [
-        {
-          "action": "webfetch",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "websearch",
-          "resource": "*",
-          "effect": "allow"
-        }
-      ]
+      "model": "{env:OPENCODE_BIG_MODEL}#high"
     },
     "general": {
       "model": "{env:OPENCODE_MODEL}#high"
     },
     "explore": {
-      "model": "{env:OPENCODE_MODEL}#low",
-      "permissions": [
-        {
-          "action": "webfetch",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "websearch",
-          "resource": "*",
-          "effect": "allow"
-        }
-      ]
+      "model": "{env:OPENCODE_MODEL}#low"
     },
     "compaction": {
       "model": "{env:OPENCODE_MODEL}#high"
     },
     "title": {
-      "model": "{env:OPENCODE_MODEL}#none"
+      "model": "{env:OPENCODE_MODEL}#none",
+      "permissions": [
+        {
+          "action": "webfetch",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "websearch",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     },
     "summary": {
-      "model": "{env:OPENCODE_MODEL}#low"
+      "model": "{env:OPENCODE_MODEL}#low",
+      "permissions": [
+        {
+          "action": "webfetch",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "websearch",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     }
   }
 }
