@@ -1,0 +1,8 @@
+[alias]
+	d = diff
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --graph --date=relative --decorate --all --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\"
+	open = "!gh browse"

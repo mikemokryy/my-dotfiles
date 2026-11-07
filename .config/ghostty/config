@@ -1,68 +1,39 @@
-# This is the configuration file for Ghostty.
+# Ghostty configuration
+# Colors live in themes/terafox (upstream nightfox palette).
 
-background-opacity = 0.9
-background-blur-radius = 20
+theme = terafox
 
+# Font
 font-family = "FiraCode Nerd Font Mono"
-font-thicken = true
 font-size = 15.5
-font-synthetic-style = true
-
-
-shell-integration= fish
-# macos-titlebar-style = hidden
-
+font-thicken = true
 adjust-cell-width = "-10%"
 adjust-cell-height = "10%"
 
-cursor-style = block
-cursor-style-blink = true
-shell-integration-features = no-cursor
-mouse-hide-while-typing = true
-
+# Window
 maximize = true
-
-# window-save-state = always
-# window-decoration = false
-window-padding-balance = true
-window-padding-color = extend
+background-opacity = 0.9
+background-blur-radius = 20
 window-padding-x = 0
 window-padding-y = 0
+window-padding-balance = true
+window-padding-color = extend
 
+# Cursor
+cursor-style = block
+cursor-style-blink = true
+mouse-hide-while-typing = true
+
+# Shell integration
+# ssh-env/ssh-terminfo propagate integration and terminfo over SSH.
+shell-integration = fish
+shell-integration-features = no-cursor,ssh-env,ssh-terminfo
+
+# macOS
 macos-option-as-alt = left
+desktop-notifications = true
+bell-features = no-system
+
+# Keep alt+arrows from deleting words (nvim)
 keybind = alt+left=unbind
 keybind = alt+right=unbind
-
-
-# Nightfox colors for Ghostty
-## name: terafox
-## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/terafox/terafox.ghostty
-
-background = #152528
-foreground = #e6eaea
-selection-background = #293e40
-selection-foreground = #e6eaea
-cursor-color = #e6eaea
-
-# normal
-palette = 0=#2f3239
-palette = 1=#e85c51
-palette = 2=#7aa4a1
-palette = 3=#fda47f
-palette = 4=#5a93aa
-palette = 5=#ad5c7c
-palette = 6=#a1cdd8
-palette = 7=#ebebeb
-
-# bright
-palette = 8=#4e5157
-palette = 9=#eb746b
-palette = 10=#8eb2af
-palette = 11=#fdb292
-palette = 12=#73a3b7
-palette = 13=#b97490
-palette = 14=#afd4de
-palette = 15=#eeeeee
-
-# extended colors
-palette = 16=#ff8349

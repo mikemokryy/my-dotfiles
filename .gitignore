@@ -104,6 +104,12 @@
 !.config/ghostty/
 !.config/ghostty/**
 
+# Git (modular includes)
+!.config/git/
+.config/git/*
+!.config/git/aliases.gitconfig
+!.config/git/delta.gitconfig
+
 # Lazygit
 !.config/lazygit/
 !.config/lazygit/**

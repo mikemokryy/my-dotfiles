@@ -3,14 +3,34 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+
 [user]
 	name = Mykhailo
 	email = 37027376+MikhailoMokryy@users.noreply.github.com
+
 [core]
-	excludesfile = $HOME/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = nvim
 	ignorecase = false
+	pager = delta
+
 [init]
 	defaultBranch = main
+
+[interactive]
+	diffFilter = delta --color-only
+
 [diff]
-    tool = nvimdiff
+	tool = nvimdiff
+
+[difftool "nvimdiff"]
+	cmd = nvim -d "$LOCAL" "$REMOTE"
+
+[mergetool "nvimdiff"]
+	cmd = nvim -d "$LOCAL" "$REMOTE" -ancestor "$BASE" -merge "$MERGED"
+	trustExitCode = true
+
+[include]
+	path = ~/.config/git/aliases.gitconfig
+	path = ~/.config/git/delta.gitconfig
+	path = ~/.gitconfig.private

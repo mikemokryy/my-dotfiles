@@ -24,7 +24,6 @@ alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
 alias g git
-alias icat="kitty +kitten icat --align=left"
 
 command -qv nvim && alias nv nvim
 command -qv nvim && alias vim nvim
