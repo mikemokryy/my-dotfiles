@@ -118,7 +118,7 @@
 !.config/opencode/
 .config/opencode/*
 !.config/opencode/opencode.jsonc
-!.config/opencode/tui.json
+!.config/opencode/cli.json
 !.config/opencode/themes/
 !.config/opencode/themes/**
 !.config/opencode/agents/

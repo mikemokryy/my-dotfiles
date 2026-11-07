@@ -379,7 +379,14 @@
       ]
     },
     "plan": {
-      "model": "{env:OPENCODE_BIG_MODEL}#high"
+      "model": "{env:OPENCODE_BIG_MODEL}#high",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "python*",
+          "effect": "allow"
+        }
+      ]
     },
     "general": {
       "model": "{env:OPENCODE_MODEL}#high"
