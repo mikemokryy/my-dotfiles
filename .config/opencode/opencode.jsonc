@@ -337,10 +337,7 @@
             {
               "id": "academic-writer",
               "settings": {
-                "thinking": {
-                  "type": "disabled"
-                },
-                "reasoningEffort": "none"
+                "reasoningEffort": "medium"
               },
               "body": {
                 "temperature": 0.3
