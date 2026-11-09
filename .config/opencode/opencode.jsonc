@@ -312,7 +312,7 @@
               }
             },
             {
-              "id": "change-auditor",
+              "id": "auditor",
               "settings": {
                 "reasoningEffort": "high"
               },
@@ -389,7 +389,19 @@
       "model": "{env:OPENCODE_MODEL}#high"
     },
     "explore": {
-      "model": "{env:OPENCODE_MODEL}#low"
+      "model": "{env:OPENCODE_MODEL}#low",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "python*",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "node*",
+          "effect": "allow"
+        }
+      ]
     },
     "compaction": {
       "model": "{env:OPENCODE_MODEL}#high"

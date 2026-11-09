@@ -1,6 +1,7 @@
 ---
 description: Fetch PR review comments and fix confirmed findings via the review-findings workflow. Argument: PR number or URL; defaults to the current branch's PR.
 agent: pr-reviewer
+subagent: true
 ---
 
 Apply the review feedback on a pull request.
@@ -41,3 +42,5 @@ Follow the `review-findings` skill for the full workflow:
 5. Report per-finding verdicts with `file:line` evidence, changes applied, and rejected findings with evidence.
 
 If there are no review comments, say so plainly and stop. Do not reply to or resolve GitHub threads, and do not commit, push, or modify repository history.
+
+Your final message is delivered to the parent session as-is — it must be the complete report; the parent will not repeat or continue your work.
