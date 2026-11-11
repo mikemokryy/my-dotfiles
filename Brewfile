@@ -36,9 +36,9 @@ brew "tree"
 
 # Apps
 cask "ghostty"
-cask "copilot-cli"
 cask "mongodb-compass"
 cask "openvpn-connect"
 cask "appcleaner"
 cask "miniforge"
+casl "caffeine"
 cask "font-fira-code-nerd-font"
