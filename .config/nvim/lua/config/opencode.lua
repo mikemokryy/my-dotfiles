@@ -8,9 +8,10 @@
 -- and makes typing lag.
 --
 -- Give OpenCode prompts a dedicated filetype. It still gets treesitter markdown
--- highlighting, but does not inherit markdown ftplugins, LSP servers,
--- renderers, linters, formatters, spell checking, wrapping or folds.
-local prompt_filetype = "opencode_prompt"
+-- highlighting and Copilot (LazyVim maps markdown.* to markdown), but avoids
+-- markdown LSP servers, renderers, linters, formatters, spell checking,
+-- wrapping and folds.
+local prompt_filetype = "markdown.opencode"
 
 local tmpdirs = {}
 for _, dir in ipairs({ vim.uv.os_tmpdir(), vim.uv.fs_realpath(vim.uv.os_tmpdir()) }) do
@@ -31,8 +32,10 @@ local function apply(buf)
     return
   end
 
-  -- Buffer-local: no completion popups and no undo/swap files for prompts.
-  vim.b[buf].completion = false
+  -- Buffer-local: keep blink completion + Copilot suggestions available for
+  -- drafting specs, but skip undo/swap files for these throwaway prompts.
+  -- With blink enabled, LazyVim's <Tab> mapping also accepts Copilot.
+  vim.b[buf].completion = true
   vim.bo[buf].undofile = false
   vim.bo[buf].swapfile = false
 

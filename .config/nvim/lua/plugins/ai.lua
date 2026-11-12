@@ -4,11 +4,6 @@ return {
   {
     "zbirenbaum/copilot.lua",
     opts = {
-      -- Copilot already ignores `markdown`; make it ignore OpenCode's prompt
-      -- filetype too so it does not try to complete in that scratch buffer.
-      filetypes = {
-        opencode_prompt = false,
-      },
       suggestion = {
         keymap = {
           accept_word = "<M-l>",
