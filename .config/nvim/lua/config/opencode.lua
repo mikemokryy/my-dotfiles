@@ -1,72 +1,33 @@
--- OpenCode opens its prompt in $EDITOR as <tmpdir>/<epoch-ms>.md.
+-- OpenCode opens its prompt in an embedded Neovim (`nvim --embed`) backed by
+-- <tmpdir>/<epoch-ms>.md, with your own config.
 --
--- A normal markdown buffer is fine, but a scratch prompt is not a real
--- document: it usually contains one or a few very long lines, and it lives in
--- $TMPDIR without a project root. Treating it as markdown makes LazyVim load
--- render-markdown/marksman, enables wrap+spell, and lets marksman fall back to
--- indexing $HOME. That makes mode switches reflow wrapped rows (so j/k jumps)
--- and makes typing lag.
---
--- Give OpenCode prompts a dedicated filetype. It still gets treesitter markdown
--- highlighting and Copilot (LazyVim maps markdown.* to markdown), but avoids
--- markdown LSP servers, renderers, linters, formatters, spell checking,
--- wrapping and folds.
-local prompt_filetype = "markdown.opencode"
-
+-- OpenCode's input parser folds a fast <Esc> followed by h/j/k/l into
+-- <A-h>/<A-j>/<A-k>/<A-l>. LazyVim maps <A-j>/<A-k> to "move line down/up" and
+-- Copilot accepts a suggestion on <A-l>, so leaving insert mode and immediately
+-- navigating moved lines or inserted text. In prompt buffers, map the merged
+-- keys back to the motions they were meant to be.
 local tmpdirs = {}
 for _, dir in ipairs({ vim.uv.os_tmpdir(), vim.uv.fs_realpath(vim.uv.os_tmpdir()) }) do
   if dir then
-    tmpdirs[vim.pesc(vim.fs.normalize(dir)) .. "/%d+%.md"] = prompt_filetype
+    tmpdirs[vim.fs.normalize(dir)] = true
   end
 end
 
-vim.filetype.add({ pattern = tmpdirs })
-
--- nvim-treesitter uses this mapping to highlight the prompt as markdown.
-vim.treesitter.language.register("markdown", prompt_filetype)
-
-local group = vim.api.nvim_create_augroup("UserOpencodePrompt", { clear = true })
-
-local function apply(buf)
-  if not vim.api.nvim_buf_is_valid(buf) or vim.bo[buf].filetype ~= prompt_filetype then
-    return
-  end
-
-  -- Buffer-local: keep blink completion + Copilot suggestions available for
-  -- drafting specs, but skip undo/swap files for these throwaway prompts.
-  -- With blink enabled, LazyVim's <Tab> mapping also accepts Copilot.
-  vim.b[buf].completion = true
-  vim.bo[buf].undofile = false
-  vim.bo[buf].swapfile = false
-
-  -- Window-local: render plain text with a stable viewport. This overrides
-  -- LazyVim's treesitter folds and the global wrap/smoothscroll/scrolloff.
-  for _, win in ipairs(vim.fn.win_findbuf(buf)) do
-    if vim.api.nvim_win_is_valid(win) then
-      vim.wo[win].wrap = false
-      vim.wo[win].smoothscroll = false
-      vim.wo[win].conceallevel = 0
-      vim.wo[win].concealcursor = ""
-      vim.wo[win].foldenable = false
-      vim.wo[win].foldmethod = "manual"
-      vim.wo[win].spell = false
-      vim.wo[win].scrolloff = 3
-      vim.wo[win].sidescrolloff = 1
-      vim.wo[win].signcolumn = "no"
-    end
-  end
+local function is_prompt(buf)
+  local name = vim.fs.normalize(vim.api.nvim_buf_get_name(buf))
+  return name:match("/%d+%.md$") ~= nil and tmpdirs[vim.fs.dirname(name)] == true
 end
 
-vim.api.nvim_create_autocmd({ "FileType", "BufWinEnter" }, {
-  group = group,
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
   callback = function(args)
-    if vim.bo[args.buf].filetype ~= prompt_filetype then
+    if not is_prompt(args.buf) then
       return
     end
-    -- FileType handlers (ftplugins, LazyVim treesitter, ...) run during this
-    -- event, so defer until they have finished before overriding window opts.
-    vim.schedule(function()
-      apply(args.buf)
-    end)
+    for _, motion in ipairs({ "h", "j", "k", "l" }) do
+      vim.keymap.set({ "n", "i", "v" }, "<A-" .. motion .. ">", "<Esc>" .. motion, {
+        buffer = args.buf,
+        desc = "Motion (OpenCode merges <Esc>" .. motion .. " into this key)",
+      })
+    end
   end,
 })
